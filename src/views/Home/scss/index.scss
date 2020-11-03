@@ -2,9 +2,10 @@
 
 .home-page {
   &__hero {
-    background-color: $blue-overlay;
+    background-color: $red;
     background-blend-mode: multiply;
-    background-size: cover;
+    // background-size: cover;
+    max-height: 12vh;
     background-position: center;
     text-align: center;
     padding: 12rem 0;
@@ -12,6 +13,7 @@
     &-text {
       overflow: hidden;
     }
+    
 
     @media (max-width: $small-screen) {
       align-items: center;
@@ -63,7 +65,12 @@
       }
     }
   }
-
+  &_coverImg{
+    max-height: 50vh;
+    max-width: 60vh;
+    position: absolute;
+    top: 20vh;
+  }
   &__categories {
     margin-bottom: 2rem;
 

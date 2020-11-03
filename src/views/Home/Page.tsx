@@ -17,6 +17,8 @@ import {
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 
 import noPhotoImg from "../../images/no-photo.svg";
+import cartlist from "../../images/cartlist.svg";
+import shoppinglady from "../../images/shoppinglady.svg";
 
 const Page: React.FC<{
   loading: boolean;
@@ -36,17 +38,13 @@ const Page: React.FC<{
       </script>
       <div
         className="home-page__hero"
-        style={
-          backgroundImage
-            ? { backgroundImage: `url(${backgroundImage.url})` }
-            : null
-        }
       >
-        <div className="home-page__hero-text">
+        <img className="home-page_coverImg" src={cartlist} alt='image'></img>
+        {/* <div className="home-page__hero-text">
           <div>
             <span className="home-page__hero__title">
               <h1>
-                <FormattedMessage defaultMessage="Final reduction" />
+                <FormattedMessage defaultMessage="HeHe" />
               </h1>
             </span>
           </div>
@@ -57,7 +55,7 @@ const Page: React.FC<{
               </h1>
             </span>
           </div>
-        </div>
+        </div> */}
         <div className="home-page__hero-action">
           {loading && !categories ? (
             <Loader />
