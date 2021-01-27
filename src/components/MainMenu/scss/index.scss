@@ -3,7 +3,7 @@
 .main-menu {
   align-items: center;
   align-items: stretch;
-  background-color: $white;
+  background-color:  wheat;
   border-bottom: 1px solid $gray-light;
   display: flex;
   flex-direction: row;
@@ -40,14 +40,11 @@
 
   &__center {
     align-self: center;
-
-    svg {
-      width: 4rem;
-
-      @media (min-width: $small-screen) {
-        width: 6rem;
-      }
+    h1{
+      font-family: serif;
+      font-style: italic;
     }
+
   }
 
   &__item {

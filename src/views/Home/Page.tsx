@@ -19,6 +19,7 @@ import { structuredData } from "../../core/SEO/Homepage/structuredData";
 import noPhotoImg from "../../images/no-photo.svg";
 import cartlist from "../../images/cartlist.svg";
 import shoppinglady from "../../images/shoppinglady.svg";
+import { Divider } from "@components/atoms/DemoBanner/styles";
 
 const Page: React.FC<{
   loading: boolean;
@@ -36,26 +37,17 @@ const Page: React.FC<{
       <script className="structured-data-list" type="application/ld+json">
         {structuredData(shop)}
       </script>
-      <div
-        className="home-page__hero"
-      >
-        <img className="home-page_coverImg" src={cartlist} alt='image'></img>
-        {/* <div className="home-page__hero-text">
-          <div>
-            <span className="home-page__hero__title">
-              <h1>
-                <FormattedMessage defaultMessage="HeHe" />
-              </h1>
-            </span>
-          </div>
-          <div>
-            <span className="home-page__hero__title">
-              <h1>
-                <FormattedMessage defaultMessage="Up to 70% off sale" />
-              </h1>
-            </span>
-          </div>
-        </div> */}
+      <div className="home-page__hero">
+        <div className="home-page_cover">
+          <img
+            className="home-page_coverImg"
+            src={shoppinglady}
+            alt="image"
+          ></img>
+          <h1>Come In,</h1><br></br>
+          <h1>We Are Open!</h1>
+        </div>
+        
         <div className="home-page__hero-action">
           {loading && !categories ? (
             <Loader />
@@ -67,9 +59,9 @@ const Page: React.FC<{
                   categories.edges[0].node.name
                 )}
               >
-                <Button testingContext="homepageHeroActionButton">
+                {/* <Button testingContext="homepageHeroActionButton">
                   <FormattedMessage defaultMessage="Shop sale" />
-                </Button>
+                </Button> */}
               </Link>
             )
           )}

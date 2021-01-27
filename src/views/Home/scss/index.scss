@@ -2,21 +2,22 @@
 
 .home-page {
   &__hero {
-    background-color: $red;
-    background-blend-mode: multiply;
-    // background-size: cover;
-    max-height: 12vh;
-    background-position: center;
+    background-color: olivedrab;
+    background-blend-mode: initial;
+    border: initial;
+    height: 8vh;
+    // background-size: 8vh;
+    // background-position: center;
     text-align: center;
     padding: 12rem 0;
 
     &-text {
       overflow: hidden;
     }
-    
+
 
     @media (max-width: $small-screen) {
-      align-items: center;
+      // align-items: center;
       display: flex;
       flex-direction: column;
       height: calc(100vh - 56px);
@@ -66,10 +67,19 @@
     }
   }
   &_coverImg{
-    max-height: 50vh;
+    max-height: 45vh;
     max-width: 60vh;
-    position: absolute;
-    top: 20vh;
+    float: left;
+    position: relative;
+    bottom: 22vh;
+  }
+  &_cover{
+    display:inline-flex;
+    justify-content: space-around;
+    h1{
+      color: wheat;
+      margin-left: 4vh;
+    }
   }
   &__categories {
     margin-bottom: 2rem;
