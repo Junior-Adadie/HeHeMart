@@ -68,7 +68,7 @@ const Page: React.FC<{
         </div>
       </div>
       <ProductsFeatured
-        title={intl.formatMessage({ defaultMessage: "Featured" })}
+        title={intl.formatMessage({ defaultMessage: "Popular" })}
       />
       {categoriesExist() && (
         <div className="home-page__categories">

@@ -7,7 +7,7 @@
     text-transform: $product-item-title-text-transform;
     font-weight: $product-item-title-font-weight;
     margin-top: $spacer;
-    text-align: left;
+    text-align: center;
   }
 
   &__undiscounted_price {
@@ -18,7 +18,7 @@
   }
 
   &__category {
-    color: $product-item-category-color;
+    color: rgb(51, 51, 88);
     text-align: left;
   }
 

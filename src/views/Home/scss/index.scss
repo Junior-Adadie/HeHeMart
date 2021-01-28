@@ -91,7 +91,7 @@
     }
 
     &__list {
-      display: grid;
+      display: flex;
       grid-template-columns: 1fr;
       grid-gap: 2rem;
 
@@ -127,15 +127,15 @@
       }
 
       &__image {
-        width: 100%;
-        height: 30rem;
+        width: 20vh;
+        height: 25vh;
         background-size: cover;
         background-position: center;
         margin-bottom: 1rem;
 
         &--no-photo {
           background-color: $turquoise-light;
-          background-repeat: no-repeat;
+          background-repeat: repeat;
           background-size: contain;
         }
       }

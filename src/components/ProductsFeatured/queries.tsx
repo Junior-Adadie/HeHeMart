@@ -14,7 +14,7 @@ export const featuredProducts = gql`
     shop {
       homepageCollection {
         id
-        products(first: 20) {
+        products(first: 5) {
           edges {
             node {
               ...BasicProductFields
