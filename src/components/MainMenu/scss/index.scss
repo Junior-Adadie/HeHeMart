@@ -9,7 +9,8 @@
   flex-direction: row;
   height: 3.55rem;
   position: relative;
-
+  // float: right;
+  
   &__left {
     flex-basis: calc(50% - 2rem);
 
@@ -174,6 +175,7 @@
   &__search {
     padding: $spacer;
     cursor: pointer;
+    margin-right:10vh;
     line-height: 24px;
     transition: 0.3s;
 
@@ -186,7 +188,7 @@
     }
 
     &:hover {
-      color: $turquoise;
+      color: $darkGreen;
       svg * {
         fill: $turquoise;
       }

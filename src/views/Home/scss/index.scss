@@ -1,8 +1,18 @@
 @import "../../../globalStyles/scss/variables.scss";
+@keyframes color {
+  0%   {background-color: olivedrab;}
+25%  {background-color: rgb(73, 47, 26);}
+50%  {background-color: rgb(42, 42, 87);}
+100% {background-color: $darkGreen;}
+}
 
 .home-page {
+
   &__hero {
     background-color: olivedrab;
+    animation-name: color;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
     background-blend-mode: initial;
     border: initial;
     height: 8vh;
@@ -14,7 +24,6 @@
     &-text {
       overflow: hidden;
     }
-
 
     @media (max-width: $small-screen) {
       // align-items: center;
@@ -66,17 +75,21 @@
       }
     }
   }
-  &_coverImg{
+  &_coverImg {
     max-height: 45vh;
     max-width: 60vh;
     float: left;
     position: relative;
     bottom: 22vh;
   }
-  &_cover{
-    display:inline-flex;
+  &_intro {
+    display: block;
+    margin-bottom: 50vh;
+  }
+  &_cover {
+    display: inline-flex;
     justify-content: space-around;
-    h1{
+    h1 {
       color: wheat;
       margin-left: 4vh;
     }
@@ -142,3 +155,4 @@
     }
   }
 }
+

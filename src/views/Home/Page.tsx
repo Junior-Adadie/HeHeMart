@@ -5,7 +5,7 @@ import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link } from "react-router-dom";
 
-import { Button, Loader, ProductsFeatured } from "../../components";
+import { Button, Loader, ProductsFeatured, ProductListItem } from "../../components";
 import { generateCategoryUrl } from "../../core/utils";
 
 import {
@@ -44,11 +44,14 @@ const Page: React.FC<{
             src={shoppinglady}
             alt="image"
           ></img>
-          <h1>Come In,</h1><br></br>
+          <div className="home-page_intro">
+          <h1>Come In,</h1>
+          <br></br>
           <h1>We Are Open!</h1>
+          </div>
         </div>
-        
-        <div className="home-page__hero-action">
+
+        {/* <div className="home-page__hero-action">
           {loading && !categories ? (
             <Loader />
           ) : (
@@ -59,13 +62,13 @@ const Page: React.FC<{
                   categories.edges[0].node.name
                 )}
               >
-                {/* <Button testingContext="homepageHeroActionButton">
+                <Button testingContext="homepageHeroActionButton">
                   <FormattedMessage defaultMessage="Shop sale" />
-                </Button> */}
+                </Button>
               </Link>
             )
           )}
-        </div>
+        </div> */}
       </div>
       <ProductsFeatured
         title={intl.formatMessage({ defaultMessage: "Popular" })}
@@ -74,7 +77,7 @@ const Page: React.FC<{
         <div className="home-page__categories">
           <div className="container">
             <h3>
-              <FormattedMessage defaultMessage="Shop by category" />
+              <FormattedMessage defaultMessage="Shop By Category" />
             </h3>
             <div className="home-page__categories__list">
               {categories.edges.map(({ node: category }) => (

@@ -7,12 +7,14 @@
     font-weight: $bold-font-weight;
     margin-bottom: $spacer * 2;
     text-transform: uppercase;
+    margin-right: 10vh;
   }
 
   a {
     color: $base-font-color;
-    display: inline-block;
+    display: block;
     max-width: 255px;
     text-decoration: none;
   }
 }
+

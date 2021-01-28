@@ -25,6 +25,19 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
             <div className="products-featured">
               <div className="container">
                 <h3>{title}</h3>
+                <Carousel className="carousel">
+                  {products.map(({ node: product }) => (
+                    <Link
+                      to={generateProductUrl(product.id, product.name)}
+                      key={product.id}
+                    >
+                      <ProductListItem product={product} />
+                    </Link>
+                  ))}
+                </Carousel>
+              </div>
+              <div className="container">
+                <h3>New Arrivals</h3>
                 <Carousel>
                   {products.map(({ node: product }) => (
                     <Link
@@ -35,6 +48,19 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
                     </Link>
                   ))}
                 </Carousel>
+              </div>
+              <div className="container">
+                <h3>Explore</h3>
+                <div>
+                  {products.map(({ node: product }) => (
+                    <Link
+                      to={generateProductUrl(product.id, product.name)}
+                      key={product.id}
+                    >
+                      <ProductListItem product={product} />
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           );
