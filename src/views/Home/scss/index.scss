@@ -5,15 +5,34 @@
 50%  {background-color: rgb(42, 42, 87);}
 100% {background-color: $darkGreen;}
 }
+@keyframes motion{
+  0%   {margin-right: 20vh;}
+25%  {margin-right: 15vh;}
+50%  {margin-right: 10vh;}
+100% {margin-right: 5vh;}
+}
+@keyframes motion2{
+  0%   {margin-right: 20vh;}
+25%  {margin-right: 15vh;}
+50%  {margin-right: 10vh;}
+100% {margin-right: 5vh;}
+}
 
+.home{
+  background-color: $lightGrey;
+  hr{
+    width: 80%;
+    size: 10px;
+  }
+}
 .home-page {
 
   &__hero {
-    background-color: olivedrab;
-    animation-name: color;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    background-blend-mode: initial;
+    background-color:rgb(58, 78, 18);
+    // animation-name: color;
+    // animation-duration: 20s;
+    // animation-iteration-count: infinite;
+    // background-blend-mode: initial;
     border: initial;
     height: 8vh;
     // background-size: 8vh;
@@ -81,6 +100,18 @@
     float: left;
     position: relative;
     bottom: 22vh;
+    margin-right: 20vh;
+    animation-name: motion;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    background-blend-mode: initial;
+  }
+  &_img{
+    max-height: 45vh;
+    max-width: 50vh;
+    float: right;
+    position: relative;
+    bottom: 22vh;
   }
   &_intro {
     display: block;
@@ -101,6 +132,8 @@
       text-transform: uppercase;
       font-weight: $bold-font-weight;
       margin-bottom: 1rem;
+      margin-top: 1rem;
+      color:$lightBrown;
     }
 
     &__list {

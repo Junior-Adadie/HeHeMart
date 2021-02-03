@@ -8,8 +8,8 @@
     margin-bottom: $spacer * 2;
     text-transform: uppercase;
     margin-right: 10vh;
+    color:$lightBrown;
   }
-
   a {
     color: $base-font-color;
     display: block;
@@ -17,4 +17,21 @@
     text-decoration: none;
   }
 }
-
+.all{
+  margin-left: 20vh;
+  display: flex;
+}
+.divider{
+  background-color: rgb(58, 78, 18);
+  width: 100%;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  h1{
+    margin-left: 20vh;
+    font-size: 4vh;
+    color:$lightBrown;
+    font-weight: $bold-font-weight;
+    margin-bottom: $spacer * 2;
+    text-transform: uppercase;
+  }
+}

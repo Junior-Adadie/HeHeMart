@@ -36,22 +36,10 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
                   ))}
                 </Carousel>
               </div>
-              <div className="container">
-                <h3>New Arrivals</h3>
-                <Carousel>
-                  {products.map(({ node: product }) => (
-                    <Link
-                      to={generateProductUrl(product.id, product.name)}
-                      key={product.id}
-                    >
-                      <ProductListItem product={product} />
-                    </Link>
-                  ))}
-                </Carousel>
-              </div>
-              <div className="container">
-                <h3>Explore</h3>
-                <div>
+              <div>
+              <div className='divider'><h1>Explore</h1></div>
+              <div className="all">
+                <div className="container">
                   {products.map(({ node: product }) => (
                     <Link
                       to={generateProductUrl(product.id, product.name)}
@@ -61,6 +49,43 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
                     </Link>
                   ))}
                 </div>
+                <div className="container">
+                  <div>
+                    {products.map(({ node: product }) => (
+                      <Link
+                        to={generateProductUrl(product.id, product.name)}
+                        key={product.id}
+                      >
+                        <ProductListItem product={product} />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div className="container">
+                  <div>
+                    {products.map(({ node: product }) => (
+                      <Link
+                        to={generateProductUrl(product.id, product.name)}
+                        key={product.id}
+                      >
+                        <ProductListItem product={product} />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div className="container">
+                  <div>
+                    {products.map(({ node: product }) => (
+                      <Link
+                        to={generateProductUrl(product.id, product.name)}
+                        key={product.id}
+                      >
+                        <ProductListItem product={product} />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
               </div>
             </div>
           );

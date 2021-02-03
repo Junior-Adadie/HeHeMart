@@ -5,7 +5,7 @@ import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link } from "react-router-dom";
 
-import { Button, Loader, ProductsFeatured, ProductListItem } from "../../components";
+import { ProductsFeatured } from "../../components";
 import { generateCategoryUrl } from "../../core/utils";
 
 import {
@@ -17,23 +17,24 @@ import {
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 
 import noPhotoImg from "../../images/no-photo.svg";
-import cartlist from "../../images/cartlist.svg";
 import shoppinglady from "../../images/shoppinglady.svg";
-import { Divider } from "@components/atoms/DemoBanner/styles";
+import shoppinglady2 from "../../images/shoppinglady2.svg";
+import comein from "../../images/comein.jpg";
+import bg from "../../images/blackbg.jpg";
 
 const Page: React.FC<{
   loading: boolean;
   categories: ProductsList_categories;
   backgroundImage: ProductsList_shop_homepageCollection_backgroundImage;
   shop: ProductsList_shop;
-}> = ({ loading, categories, backgroundImage, shop }) => {
+}> = ({ categories, shop }) => {
   const categoriesExist = () => {
     return categories && categories.edges && categories.edges.length > 0;
   };
   const intl = useIntl();
 
   return (
-    <>
+    <div className= 'home'>
       <script className="structured-data-list" type="application/ld+json">
         {structuredData(shop)}
       </script>
@@ -45,34 +46,16 @@ const Page: React.FC<{
             alt="image"
           ></img>
           <div className="home-page_intro">
-          <h1>Come In,</h1>
-          <br></br>
-          <h1>We Are Open!</h1>
+          <img
+            className="home-page_coverImg"
+            src={shoppinglady2}
+            alt="image"
+          ></img>
           </div>
         </div>
-
-        {/* <div className="home-page__hero-action">
-          {loading && !categories ? (
-            <Loader />
-          ) : (
-            categoriesExist() && (
-              <Link
-                to={generateCategoryUrl(
-                  categories.edges[0].node.id,
-                  categories.edges[0].node.name
-                )}
-              >
-                <Button testingContext="homepageHeroActionButton">
-                  <FormattedMessage defaultMessage="Shop sale" />
-                </Button>
-              </Link>
-            )
-          )}
-        </div> */}
       </div>
-      <ProductsFeatured
-        title={intl.formatMessage({ defaultMessage: "Popular" })}
-      />
+      <hr ></hr>
+
       {categoriesExist() && (
         <div className="home-page__categories">
           <div className="container">
@@ -109,7 +92,10 @@ const Page: React.FC<{
           </div>
         </div>
       )}
-    </>
+      <ProductsFeatured
+        title={intl.formatMessage({ defaultMessage: "Featured" })}
+      />
+    </div>
   );
 };
 

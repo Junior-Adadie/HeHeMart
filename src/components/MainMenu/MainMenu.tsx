@@ -168,9 +168,6 @@ const MainMenu: React.FC = () => {
           </div>
 
           <div className="main-menu__center">
-            {/* <Link to={appPaths.baseUrl}>
-              <ReactSVG path={logoImg} />
-            </Link> */}
             <Link to= {appPaths.baseUrl}><h1>HeHeMart</h1></Link>
           </div>
 

@@ -8,11 +8,12 @@
     font-weight: $product-item-title-font-weight;
     margin-top: $spacer;
     text-align: center;
+    color: $lightBrown;
   }
 
   &__undiscounted_price {
     text-decoration: line-through;
-    color: $gray;
+    color: $lightBrown;
     font-size: $small-font-size;
     font-weight: regular;
   }
@@ -20,18 +21,21 @@
   &__category {
     color: rgb(34, 34, 104);
     text-align: center;
+    color: $darkGreen;
   }
 
   &__price {
     font-weight: $product-item-price-font-weight;
-    margin: $product-item-price-margin;
+    margin-bottom: 4vh;
+    margin-top: 1vh;
     text-align: left;
+    color: $lightBrown;
   }
 
   &__image {
     background-color: $turquoise-light;
     display: flex;
-    height: 350px;
+    height: 200px;
     justify-content: center;
 
     img {
