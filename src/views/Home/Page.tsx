@@ -4,8 +4,8 @@ import classNames from "classnames";
 import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link } from "react-router-dom";
-
-import { Button, Loader, ProductsFeatured } from "../../components";
+import {Explore} from "../../components/Explore"
+import { Button, Loader, ProductsFeatured} from "../../components";
 import { generateCategoryUrl, maybe } from "../../core/utils";
 
 import {
@@ -19,7 +19,6 @@ import { Carousel } from "../../components";
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 
 import noPhotoImg from "../../images/no-photo.svg";
-import { ProductList } from "../../@next/components/organisms";
 import {ProductDetails_product} from "../Product/gqlTypes/ProductDetails";
 
 const Page: React.FC<{
@@ -27,14 +26,12 @@ const Page: React.FC<{
   categories: ProductsList_categories;
   backgroundImage: ProductsList_shop_homepageCollection_backgroundImage;
   shop: ProductsList_shop;
-  products: ProductDetails_product;
-}> = ({ loading,products, categories, backgroundImage, shop }) => {
+}> = ({ loading, categories, backgroundImage, shop }) => {
   const categoriesExist = () => {
     return categories && categories.edges && categories.edges.length > 0;
   };
   
   const intl = useIntl();
-  console.log(shop);
   return (
     <div className="home-page">
       <script className="structured-data-list" type="application/ld+json">
@@ -124,6 +121,8 @@ const Page: React.FC<{
       )}
       <ProductsFeatured
         title={intl.formatMessage({ defaultMessage: "Featured" })}
+      />
+      <Explore
       />
     </div>
   );

@@ -7,9 +7,11 @@ import { Thumbnail } from "@components/molecules";
 
 import { TaxedMoney } from "../../@next/components/containers";
 import { FeaturedProducts_shop_homepageCollection_products_edges_node } from "../ProductsFeatured/gqlTypes/FeaturedProducts";
+import { Explore_products_edges_node } from "../Explore/gqlTypes/Explore";
 
 interface ProductListItemProps {
   product: FeaturedProducts_shop_homepageCollection_products_edges_node;
+  exploreProduct: Explore_products_edges_node;
 }
 
 const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => {

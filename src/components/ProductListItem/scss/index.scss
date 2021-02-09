@@ -1,6 +1,7 @@
 @import "../../../globalStyles/scss/variables.scss";
 
 .product-list-item {
+  margin:5vh;
   text-align: center;
 
   &__title {
@@ -8,18 +9,17 @@
     font-weight: $product-item-title-font-weight;
     margin-top: $spacer;
     text-align: center;
-    color: $lightBrown;
+    color: $navColor;
   }
 
   &__undiscounted_price {
     text-decoration: line-through;
-    color: $lightBrown;
+    color: $lightGrey;
     font-size: $small-font-size;
     font-weight: regular;
   }
 
   &__category {
-    color: rgb(34, 34, 104);
     text-align: center;
     color: $darkGreen;
   }
@@ -29,7 +29,7 @@
     margin-bottom: 4vh;
     margin-top: 1vh;
     text-align: left;
-    color: $lightBrown;
+    color: $navColor;
   }
 
   &__image {

@@ -8,7 +8,7 @@
   }
 
   &__menu {
-    background-color: $gray-light;
+    background-color: $paleWhite;
     padding: $spacer * 3 0 $spacer * 2;
 
     .container {
@@ -33,11 +33,11 @@
           font-weight: $bold-font-weight;
           margin-bottom: $spacer;
           font-size: $small-font-size;
-          color: $gray;
+          color: $paleWhite;
 
           a {
             text-decoration: none;
-            color: $gray;
+            color: $paleWhite;
           }
         }
       }
@@ -45,7 +45,7 @@
   }
 
   &-nav {
-    background-color: $gray-light;
+    background-color: $navColor;
     padding: $spacer * 3 0 $spacer * 2;
 
     .container {
@@ -68,11 +68,11 @@
         p {
           margin-bottom: $spacer;
           font-size: $small-font-size;
-          color: $gray;
+          color: $paleWhite;
 
           a {
             text-decoration: none;
-            color: $gray;
+            color: $paleWhite;
           }
         }
       }

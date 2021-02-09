@@ -19,7 +19,6 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
           () => data.shop.homepageCollection.products.edges,
           []
         );
-        
         if (products.length) {
           return (
             <div className="products-featured">
@@ -31,61 +30,10 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
                       to={generateProductUrl(product.id, product.name)}
                       key={product.id}
                     >
-                      <ProductListItem product={product} />
+                      <ProductListItem product={product} exploreProduct={product}/>
                     </Link>
                   ))}
                 </Carousel>
-              </div>
-              <div>
-              <div className='divider'><h2 style={{color:"black"}}>Explore</h2></div>
-              <div className="all">
-                <div className="container">
-                  {products.map(({ node: product }) => (
-                    <Link
-                      to={generateProductUrl(product.id, product.name)}
-                      key={product.id}
-                    >
-                      <ProductListItem product={product} />
-                    </Link>
-                  ))}
-                </div>
-                <div className="container">
-                  <div>
-                    {products.map(({ node: product }) => (
-                      <Link
-                        to={generateProductUrl(product.id, product.name)}
-                        key={product.id}
-                      >
-                        <ProductListItem product={product} />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                <div className="container">
-                  <div>
-                    {products.map(({ node: product }) => (
-                      <Link
-                        to={generateProductUrl(product.id, product.name)}
-                        key={product.id}
-                      >
-                        <ProductListItem product={product} />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                <div className="container">
-                  <div>
-                    {products.map(({ node: product }) => (
-                      <Link
-                        to={generateProductUrl(product.id, product.name)}
-                        key={product.id}
-                      >
-                        <ProductListItem product={product} />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
               </div>
             </div>
           );

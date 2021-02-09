@@ -1,31 +1,29 @@
 import gql from "graphql-tag";
-import { ProductsList } from "./gqlTypes/ProductsList";
+import { TypedQuery } from "../../core/queries";
+import {
+  basicProductFragment,
+  productPricingFragment,
+} from "../../views/Product/queries";
+import {Explore} from "./gqlTypes/Explore";
 
-export const Explore = gql`
-  query ProductsList{
-  shop {
-      description
-      name
-      homepageCollection {
-        id
-        backgroundImage {
-          url
-        }
-        name
+export const ExploreQuery = gql`
+  ${basicProductFragment}
+  ${productPricingFragment}
+  query Explore{
         products(first: 10) {
           edges {
             node {
+              ...BasicProductFields
+              ...ProductPricingField
+              category{
               id
               name
-              category {
-                id
-                name
-              }
+            }
             }
           }
         }
       }
-    }
-      
-  }
-`;
+`
+export const TypedExploreQuery = TypedQuery<Explore, {}>(ExploreQuery);
+;
+
