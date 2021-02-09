@@ -2,41 +2,24 @@
 @keyframes color {
   0%   {background-color: olivedrab;}
 25%  {background-color: rgb(73, 47, 26);}
-50%  {background-color: rgb(42, 42, 87);}
+50%  {background-color: rgb(35, 35, 70);}
 100% {background-color: $darkGreen;}
 }
 @keyframes motion{
   0%   {margin-right: 20vh;}
 25%  {margin-right: 15vh;}
 50%  {margin-right: 10vh;}
-100% {margin-right: 5vh;}
-}
-@keyframes motion2{
-  0%   {margin-right: 20vh;}
-25%  {margin-right: 15vh;}
-50%  {margin-right: 10vh;}
-100% {margin-right: 5vh;}
+60%  {margin-right: 5vh;}
+70%  {margin-right: 10vh;}
+85% {margin-right: 15vh;}
+100% {margin-right: 20vh;}
 }
 
-.home{
-  background-color: $lightGrey;
-  hr{
-    width: 80%;
-    size: 10px;
-  }
-}
 .home-page {
-
+background-color: #E6E6E6;
   &__hero {
-    background-color:rgb(58, 78, 18);
-    // animation-name: color;
-    // animation-duration: 20s;
-    // animation-iteration-count: infinite;
-    // background-blend-mode: initial;
     border: initial;
     height: 8vh;
-    // background-size: 8vh;
-    // background-position: center;
     text-align: center;
     padding: 12rem 0;
 
@@ -64,7 +47,7 @@
     }
 
     &__title {
-      background-color: $white;
+      background-color: $orange;
       display: inline-block;
       transform: skew(45deg);
       padding: $spacer $spacer * 3;
@@ -80,7 +63,7 @@
         transform: skew(-45deg);
         font-weight: $bold-font-weight;
         text-transform: uppercase;
-        color: $blue;
+        color: $paleWhite;
         font-size: $h1-font-size;
         font-weight: 900;
 
@@ -127,34 +110,41 @@
   }
   &__categories {
     margin-bottom: 2rem;
+    margin-top: 4rem;
 
+    h2 {
+      text-transform: uppercase;
+      font-weight: $bold-font-weight;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      color:$darkGreen
+    }
     h3 {
       text-transform: uppercase;
       font-weight: $bold-font-weight;
       margin-bottom: 1rem;
       margin-top: 1rem;
-      color:$lightBrown;
+      color:$darkGrey;
     }
 
     &__list {
-      display: flex;
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       grid-gap: 2rem;
 
       @media (min-width: $small-screen) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
 
         > div {
-          &:nth-child(3) {
-            grid-column: 3 / 1;
+          &:nth-child(4) {
+            grid-column: 4/1;
           }
 
-          &:nth-child(n + 4) {
+          &:nth-child(n + 6) {
             display: none;
           }
         }
       }
-
       a {
         text-decoration: none;
         color: $base-font-color;

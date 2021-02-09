@@ -5,89 +5,119 @@ import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link } from "react-router-dom";
 
-import { ProductsFeatured } from "../../components";
-import { generateCategoryUrl } from "../../core/utils";
+import { Button, Loader, ProductsFeatured } from "../../components";
+import { generateCategoryUrl, maybe } from "../../core/utils";
 
 import {
   ProductsList_categories,
   ProductsList_shop,
   ProductsList_shop_homepageCollection_backgroundImage,
+  ProductsList_shop_homepageCollection
 } from "./gqlTypes/ProductsList";
+import { Carousel } from "../../components";
 
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 
 import noPhotoImg from "../../images/no-photo.svg";
-import shoppinglady from "../../images/shoppinglady.svg";
-import shoppinglady2 from "../../images/shoppinglady2.svg";
-import comein from "../../images/comein.jpg";
-import bg from "../../images/blackbg.jpg";
+import { ProductList } from "../../@next/components/organisms";
+import {ProductDetails_product} from "../Product/gqlTypes/ProductDetails";
 
 const Page: React.FC<{
   loading: boolean;
   categories: ProductsList_categories;
   backgroundImage: ProductsList_shop_homepageCollection_backgroundImage;
   shop: ProductsList_shop;
-}> = ({ categories, shop }) => {
+  products: ProductDetails_product;
+}> = ({ loading,products, categories, backgroundImage, shop }) => {
   const categoriesExist = () => {
     return categories && categories.edges && categories.edges.length > 0;
   };
+  
   const intl = useIntl();
-
+  console.log(shop);
   return (
-    <div className= 'home'>
+    <div className="home-page">
       <script className="structured-data-list" type="application/ld+json">
         {structuredData(shop)}
       </script>
-      <div className="home-page__hero">
-        <div className="home-page_cover">
-          <img
-            className="home-page_coverImg"
-            src={shoppinglady}
-            alt="image"
-          ></img>
-          <div className="home-page_intro">
-          <img
-            className="home-page_coverImg"
-            src={shoppinglady2}
-            alt="image"
-          ></img>
+      <div
+        className="home-page__hero"
+        style={
+          backgroundImage
+            ? { backgroundImage: `url(${backgroundImage.url})` }
+            : null
+        }
+      >
+        <div className="home-page__hero-text">
+          <div>
+            <span className="home-page__hero__title">
+              <h1>
+                <FormattedMessage defaultMessage="PLACE ORDER" />
+              </h1>
+            </span>
+          </div>
+          <div>
+            <span className="home-page__hero__title">
+              <h1>
+                <FormattedMessage defaultMessage="BEFORE 4PM" />
+              </h1>
+            </span>
           </div>
         </div>
+        <div className="home-page__hero-action">
+          {loading && !categories ? (
+            <Loader />
+          ) : (
+            categoriesExist() && (
+              <Link
+                to={generateCategoryUrl(
+                  categories.edges[0].node.id,
+                  categories.edges[0].node.name
+                )}
+              >
+                <Button
+                  className="home-page__hero-action__button"
+                  testingContext="homepageHeroActionButton"
+                >
+                  <FormattedMessage defaultMessage="Explore" />
+                </Button>
+              </Link>
+            )
+          )}
+        </div>
       </div>
-      <hr ></hr>
-
       {categoriesExist() && (
         <div className="home-page__categories">
           <div className="container">
             <h3>
-              <FormattedMessage defaultMessage="Shop By Category" />
+              <FormattedMessage defaultMessage="Shop by category" />
             </h3>
             <div className="home-page__categories__list">
-              {categories.edges.map(({ node: category }) => (
-                <div key={category.id}>
-                  <Link
-                    to={generateCategoryUrl(category.id, category.name)}
-                    key={category.id}
-                  >
-                    <div
-                      className={classNames(
-                        "home-page__categories__list__image",
-                        {
-                          "home-page__categories__list__image--no-photo": !category.backgroundImage,
-                        }
-                      )}
-                      style={{
-                        backgroundImage: `url(${
-                          category.backgroundImage
-                            ? category.backgroundImage.url
-                            : noPhotoImg
-                        })`,
-                      }}
-                    />
-                    <h3>{category.name}</h3>
-                  </Link>
-                </div>
-              ))}
+                {categories.edges.map(({ node: category }) => (
+                  <div key={category.id}>
+                    <Link
+                      to={generateCategoryUrl(category.id, category.name)}
+                      key={category.id}
+                    >
+                      <div
+                        className={classNames(
+                          "home-page__categories__list__image",
+                          {
+                            "home-page__categories__list__image--no-photo": !category.backgroundImage,
+                          }
+                        )}
+                        style={{
+                          backgroundImage: `url(${
+                            category.backgroundImage
+                              ? category.backgroundImage.url
+                              : noPhotoImg
+                          })`,
+                        }}
+                      />
+                      <h2>{category.name}</h2>
+                    </Link>
+                  </div>
+                ))}
             </div>
           </div>
         </div>

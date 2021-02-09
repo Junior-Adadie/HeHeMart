@@ -3,14 +3,13 @@
 .main-menu {
   align-items: center;
   align-items: stretch;
-  background-color:  wheat;
+  background-color: $navColor;
   border-bottom: 1px solid $gray-light;
   display: flex;
   flex-direction: row;
   height: 3.55rem;
   position: relative;
-  // float: right;
-  
+
   &__left {
     flex-basis: calc(50% - 2rem);
 
@@ -41,11 +40,14 @@
 
   &__center {
     align-self: center;
-    h1{
-      font-family: serif;
-      font-style: italic;
-    }
 
+    svg {
+      width: 4rem;
+
+      @media (min-width: $small-screen) {
+        width: 6rem;
+      }
+    }
   }
 
   &__item {
@@ -55,7 +57,7 @@
 
     a {
       text-decoration: none;
-      color: $base-font-color;
+      color: $paleWhite;
       position: relative;
       transition: 0.3s;
 
@@ -175,7 +177,6 @@
   &__search {
     padding: $spacer;
     cursor: pointer;
-    margin-right:10vh;
     line-height: 24px;
     transition: 0.3s;
 
@@ -188,7 +189,7 @@
     }
 
     &:hover {
-      color: $darkGreen;
+      color: $turquoise;
       svg * {
         fill: $turquoise;
       }
@@ -198,6 +199,10 @@
       text-transform: uppercase;
       font-weight: $bold-font-weight;
       margin-right: $spacer;
+      color:$paleWhite;
+      &:hover{
+        color: $turquoise;
+      }
     }
 
     div {
@@ -205,7 +210,7 @@
     }
 
     svg {
-      vertical-align: bottom;
+      vertical-align: top;
     }
   }
 

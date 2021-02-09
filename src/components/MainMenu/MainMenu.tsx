@@ -24,8 +24,9 @@ import cartImg from "../../images/cart.svg";
 import hamburgerHoverImg from "../../images/hamburger-hover.svg";
 import hamburgerImg from "../../images/hamburger.svg";
 import logoImg from "../../images/logo.svg";
-import heheImg from "../../images/hehe.jpg";
+import tumaLogo from "../../images/tumalogo.png";
 import searchImg from "../../images/search.svg";
+import searchWhite from "../../images/searchSmall.svg";
 import userImg from "../../images/user.svg";
 import {
   mediumScreen,
@@ -168,7 +169,9 @@ const MainMenu: React.FC = () => {
           </div>
 
           <div className="main-menu__center">
-            <Link to= {appPaths.baseUrl}><h1>HeHeMart</h1></Link>
+            <Link to={appPaths.baseUrl}>
+              <img src={tumaLogo} style={{height:"6vh"}}/>
+            </Link>
           </div>
 
           <div className="main-menu__right">
@@ -276,7 +279,7 @@ const MainMenu: React.FC = () => {
                     </span>
                   )}
                 />
-                <ReactSVG path={searchImg} />
+                <ReactSVG path={searchWhite} style={{height:"4vh"}} />
               </li>
             </ul>
           </div>

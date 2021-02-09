@@ -19,12 +19,12 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
           () => data.shop.homepageCollection.products.edges,
           []
         );
-
+        
         if (products.length) {
           return (
             <div className="products-featured">
               <div className="container">
-                <h3>{title}</h3>
+                <h3 style={{color:"black"}}>{title}</h3>
                 <Carousel className="carousel">
                   {products.map(({ node: product }) => (
                     <Link
@@ -37,7 +37,7 @@ const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({ title }) => {
                 </Carousel>
               </div>
               <div>
-              <div className='divider'><h1>Explore</h1></div>
+              <div className='divider'><h2 style={{color:"black"}}>Explore</h2></div>
               <div className="all">
                 <div className="container">
                   {products.map(({ node: product }) => (
